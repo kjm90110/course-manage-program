@@ -21,7 +21,7 @@ public class Test {
 //			int result = service.removeCourse(2);
 //			int result = service.modifyCourseName(new Course(3, "music", "djfowijf"));
 			
-			int result = service.modifyProfessorId(new Course(3, "music", "kjm"));
+			int result = service.modifyProfessorId(new Course(3, "서양화", 44, 0, "강의실4", "전공필수", "test", "fefe", "서양화과"));
 			System.out.println(result>0 ? "등록 성공!" : "등록 실패ㅠ");
 
 
