@@ -6,6 +6,14 @@
 
 이 프로젝트는 대학교의 수강신청 시스템을 모델링한 웹 애플리케이션으로, 교수와 학생 두 가지 사용자 역할을 지원합니다. MVC 패턴과 Command 패턴을 기반으로 설계되었으며, JSP와 Servlet을 활용한 전통적인 Java 웹 애플리케이션입니다.
 
+## 🖥️ 시스템 스크린샷
+
+### 로그인 시스템
+시스템 접속 시 사용자는 교수 또는 학생 로그인 방식을 선택할 수 있습니다.
+
+![로그인 방식 선택 페이지](screenshots/login_choice.png)
+*로그인 방식 선택 화면 - 교수와 학생 중 선택*
+
 ## 🏗️ 시스템 아키텍처
 
 ```
@@ -28,7 +36,7 @@
 
 - **Backend**: Java, JSP, Servlet
 - **Database**: Oracle Database
-- **Frontend**: Bootstrap 5, HTML5, CSS3, JavaScript
+- **Frontend**: JSP, Bootstrap 5, HTML5, CSS3, JavaScript
 - **Server**: Apache Tomcat
 - **Architecture**: MVC, Command Pattern, DAO Pattern
 
@@ -58,21 +66,65 @@ courseManageProgram/
     └── WEB-INF/          # 웹 애플리케이션 설정
 ```
 
-## 👥 사용자 역할
+## 👥 사용자 역할 및 주요 기능
 
 ### 🎓 교수 (Professor)
+
+#### 로그인 및 메인 화면
+교수는 전용 로그인 페이지를 통해 시스템에 접속할 수 있습니다.
+
+![교수 로그인 페이지](screenshots/professorLogin.png)
+*교수 로그인 화면*
+
+로그인 후 교수 전용 메인 페이지에서 강의 관리 기능을 이용할 수 있습니다.
+
+![교수 메인 페이지](screenshots/professor_main.png)
+*교수 메인 화면 - 강의 관리 및 현황 조회*
+
+#### 주요 기능
 - **회원가입/로그인**: 교수 계정 생성 및 인증
 - **강의 등록**: 새로운 강의 개설
 - **강의 관리**: 개설한 강의 목록 조회
 - **수강생 조회**: 강의별 신청한 학생 목록 확인
 - **정보 수정**: 개인정보 업데이트
 
+#### 강의 등록 시스템
+교수는 강의명, 수강정원, 강의실, 시간 등을 설정하여 새로운 강의를 개설할 수 있습니다.
+
+![강의 등록 페이지](screenshots/registCourse.png)
+*강의 등록 화면 - 강의 정보 입력 및 등록*
+
 ### 🎒 학생 (Student)
+
+#### 로그인 및 메인 화면
+학생은 학번과 비밀번호로 시스템에 로그인할 수 있습니다.
+
+![학생 로그인 페이지](screenshots/studentLogin.png)
+*학생 로그인 화면*
+
+로그인 후 학생 메인 페이지에서 수강신청 및 현황을 확인할 수 있습니다.
+
+![학생 메인 페이지](screenshots/studentMain.png)
+*학생 메인 화면 - 수강신청 및 현황 관리*
+
+#### 주요 기능
 - **회원가입/로그인**: 학생 계정 생성 및 인증
 - **수강신청**: 개설된 강의 중 전공 맞는 강의 신청
 - **수강현황 조회**: 신청한 강의 목록 확인
 - **수강 취소**: 신청한 강의 취소
 - **정보 조회**: 개인정보 확인
+
+#### 학생 정보 관리
+학생은 개인정보를 조회하고 관리할 수 있습니다.
+
+![학생 정보 페이지](screenshots/studentInfo.png)
+*학생 정보 화면 - 개인정보 조회 및 관리*
+
+#### 수강신청 시스템
+학생은 개설된 강의 목록을 확인하고 전공에 맞는 강의를 신청할 수 있습니다.
+
+![수강신청 페이지](screenshots/enrollment.png)
+*수강신청 화면 - 강의 목록 조회 및 신청*
 
 ## 🗃️ 데이터베이스 스키마
 
@@ -179,6 +231,8 @@ CREATE SEQUENCE SEQ_COURSE START WITH 1 INCREMENT BY 1;
 CREATE SEQUENCE SEQ_ENROLLMENT START WITH 1 INCREMENT BY 1;
 ```
 
+## 🚀 설치 및 실행
+
 ### 애플리케이션 실행
 1. 프로젝트를 IDE에서 Import
 2. Tomcat 서버 설정
@@ -233,8 +287,6 @@ String className = "courseManageProgram.command." + command + proc + "Command";
 - `/enrollmentCourse.do`: 수강신청
 - `/student/registStudent.do`: 학생 회원가입
 - `/cancleCourse.do`: 수강취소
-
-
 
 ---
 
